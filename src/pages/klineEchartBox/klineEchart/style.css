@@ -1,0 +1,201 @@
+/* 全局重置样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 基础页面样式 */
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    background: #1a1a1a;
+    color: #e0e0e0;
+    padding: 20px;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 主容器布局 */
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 5px;
+    /* max-width: 1800px; */
+    margin: 0 auto;
+    height: calc(100vh - 40px);
+    min-height: 500px;
+}
+
+/* 控制区域样式 */
+.controls {
+    /* grid-column: 1 / 3; */
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* margin-bottom: 10px; */
+    /* padding: 15px; */
+    background: #2a2a2a;
+    border-radius: 8px;
+    min-height: 60px;
+}
+
+/* 控制组样式 */
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    margin-right: 20px; /* 或其他合适的距离 */
+}
+
+/* 标签样式 */
+label {
+    font-weight: bold;
+    color: #bb86fc;
+}
+
+/* 输入框和按钮基础样式 */
+input, button {
+    padding: 8px 12px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background: #333;
+    color: #fff;
+}
+
+/* 按钮特殊样式 */
+button {
+    background: #bb86fc;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+/* 按钮悬停效果 */
+button:hover {
+    background: #9b5de5;
+}
+
+/* 图表容器样式 */
+.chart-container {
+    background: #2a2a2a;
+    border-radius: 8px;
+    position: relative;
+    height: 100%;
+    min-height: 400px;
+}
+
+/* 主图表样式 */
+#mainChart {
+    width: 100%;
+    height: 100% !important;
+}
+
+.chart-controls {
+    margin: 10px 0;
+    padding: 10px;
+    background: #2a2a2a;
+    border-radius: 4px;
+}
+
+.switch-label {
+    color: #e0e0e0;
+    font-weight: bold;
+}
+
+.switches {
+    display: flex;
+    gap: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #555;
+    transition: .4s;
+    border-radius: 24px;
+    padding: 0 8px;
+    line-height: 24px;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 14px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(36px);
+}
+
+.btn-toggle {
+    background: #2196f3;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-toggle:hover {
+    background: #1976d2;
+}
+
+/* 响应式调整 */
+@media (max-width: 1200px) {
+    .container {
+        grid-template-columns: 1fr;
+        height: calc(100vh - 40px);
+    }
+    
+    body {
+        padding: 10px;
+    }
+}
+
+@media (max-height: 600px) {
+    .container {
+        min-height: 400px;
+    }
+    
+    .chart-container {
+        min-height: 300px;
+    }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K线图表与副图展示 - ECharts版本</title>
+    <link rel="stylesheet" href="./klineEchart/style.css">
+    <script src="./depend/echarts.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 控制区域 -->
+        <div class="controls">
+            <div class="chart-controls">
+                <div class="control-group">
+                    <label class="switch-label">副图显示控制:</label>
+                    <div class="switches">
+                        <label class="switch">
+                            <input type="checkbox" id="volumeSwitch" checked>
+                            <span class="slider">成交量</span>
+                        </label>
+                        <label class="switch">
+                            <input type="checkbox" id="kdjSwitch" checked>
+                            <span class="slider">KDJ</span>
+                        </label>
+                        <label class="switch">
+                            <input type="checkbox" id="macdSwitch" checked>
+                            <span class="slider">MACD</span>
+                        </label>
+                        <label class="switch">
+                            <input type="checkbox" id="dzx20Switch" checked>
+                            <span class="slider">单针下20</span>
+                        </label>
+                    </div>
+                    <button id="toggleAllCharts" class="btn-toggle">全部切换</button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <button id="resetBtn">重置图表</button>
+                <button id="fullscreenBtn">全屏</button>
+            </div>
+        </div>
+
+        <!-- 中间内容区域 -->
+        <div>
+            <!-- 主图：K线图 -->
+            <div class="chart-container">
+                <div id="mainChart" style="width: 100%; height: 800px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./klineEchart/chart.js"></script>
+</body>
+
+</html>

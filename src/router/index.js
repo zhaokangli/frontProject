@@ -58,6 +58,12 @@ export const routeConfig = [
     ],
   },
     {
+    key: "6", // 菜单唯一标识
+    path: "/klineEchart", // 路由路径
+    component: lazy(() => import("../pages/klineEchartBox/klineEchart")), // 对应页面组件
+    label: "k线图展示", // 菜单显示文本
+  },
+  {
     key: "1", // 菜单唯一标识
     path: "/nav1", // 路由路径
     component: Nav1, // 对应页面组件
